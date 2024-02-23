@@ -38,7 +38,7 @@ srun --jobid $SLURM_JOBID bash -c "torchrun --nnodes 4 --nproc_per_node 8 \
   --rdzv_id $RANDOM --rdzv_backend c10d --rdzv_endpoint $head_node_ip:2234 \
    llama-recipes/examples/finetuning.py \
   --model_name meta-llama/Llama-2-7b-hf \
-  --output_dir <TODO> \
+  --dist_checkpoint_root_folder <TODO> \
   --save_metrics True \
   --batch_size_training 4 \
   --gradient_accumulation_steps 1 \
